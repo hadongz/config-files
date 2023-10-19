@@ -1,11 +1,18 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "pyright" }
+    ensure_installed = {
+      "lua_ls",
+      "pyright",
+      "clangd"
+    }
 })
 
 local lspconfig = require("lspconfig")
 local lsp_defaults = lspconfig.util.default_config
+local luasnip = require("luasnip")
 
+require('luasnip.loaders.from_vscode').lazy_load()
+luasnip.config.setup {}
 
 lsp_defaults.capabilities = vim.tbl_deep_extend(
     'force',
@@ -15,6 +22,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 
 
 lspconfig.pyright.setup {}
+lspconfig.clangd.setup {}
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
