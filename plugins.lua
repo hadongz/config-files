@@ -45,14 +45,7 @@ local plugins = {
     config = function()
       require("better_escape").setup()
     end,
-  },
-
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end
-  },
+  }
 
   -- To make a plugin not be loaded
   -- {
