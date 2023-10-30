@@ -15,3 +15,9 @@ Check the branches for the list of config file
 - Run this `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 - Create tmux config in `~/.config/tmux`
 - Clone the `tmux-config` branch
+
+## alacritty-config
+
+- Install alacritty
+- Create config folder in `~/.config/alacritty`
+- Clone the `alacritty-config` branch
