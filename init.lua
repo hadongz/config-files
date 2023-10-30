@@ -7,14 +7,13 @@ local autocmd = vim.api.nvim_create_autocmd
 -- })
 
 local function open_nvim_tree(data)
-
   local directory = vim.fn.isdirectory(data.file) == 1
 
   -- buffer is a [No Name]
   local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
 
   if not directory and not no_name then
-      return
+    return
   end
 
   if directory then
@@ -27,11 +26,11 @@ local function open_nvim_tree(data)
 end
 
 local function transparent_background()
-  vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
-  vim.cmd('hi NonText guibg=NONE ctermbg=NONE')
-  vim.cmd('hi NvimTreeNormalNC guibg=NONE ctermbg=NONE')
-  vim.cmd('hi NvimTreeNormal guibg=NONE ctermbg=NONE')
-  vim.cmd('hi NvimTreeCursorLine guibg=NONE ctermbg=NONE')
+  vim.cmd "hi Normal guibg=NONE ctermbg=NONE"
+  vim.cmd "hi NonText guibg=NONE ctermbg=NONE"
+  vim.cmd "hi NvimTreeNormalNC guibg=NONE ctermbg=NONE"
+  vim.cmd "hi NvimTreeNormal guibg=NONE ctermbg=NONE"
+  vim.cmd "hi NvimTreeCursorLine guibg=NONE ctermbg=NONE"
 end
 
 local function vim_enter(data)
