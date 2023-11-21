@@ -49,7 +49,15 @@ local plugins = {
     config = function()
       require("better_escape").setup()
     end,
-  }
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  },
 
   -- To make a plugin not be loaded
   -- {
